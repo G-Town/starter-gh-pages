@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/starter-gh-pages/static/css/main.d1035688.css",
+    "main.js": "/starter-gh-pages/static/js/main.f7d72bc6.js",
+    "static/js/787.e15ce306.chunk.js": "/starter-gh-pages/static/js/787.e15ce306.chunk.js",
+    "static/media/1644273845427.jpg": "/starter-gh-pages/static/media/1644273845427.6c1a5e7990c01d8d115d.jpg",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/starter-gh-pages/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/jpg": "/starter-gh-pages/static/media/1661285400630843.a2bc168fce3deff190d9.jpg",
+    "static/media/673465-2204554309.jpg": "/starter-gh-pages/static/media/673465-2204554309.c61569f52f34939b4eb0.jpg",
+    "static/media/fontawesome-webfont.eot": "/starter-gh-pages/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/starter-gh-pages/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/1657150463374.jpg": "/starter-gh-pages/static/media/1657150463374.3be8a767374afe840169.jpg",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/starter-gh-pages/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/starter-gh-pages/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "index.html": "/starter-gh-pages/index.html",
+    "main.d1035688.css.map": "/starter-gh-pages/static/css/main.d1035688.css.map",
+    "main.f7d72bc6.js.map": "/starter-gh-pages/static/js/main.f7d72bc6.js.map",
+    "787.e15ce306.chunk.js.map": "/starter-gh-pages/static/js/787.e15ce306.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1035688.css",
+    "static/js/main.f7d72bc6.js"
+  ]
+}
