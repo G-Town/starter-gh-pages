@@ -38,8 +38,38 @@
   }
 }
 
-.bg-image {
-  background-image: url('../public/Wallpapers/1657150463374.jpg');
+.bg-home-image {
+  background-image: url('../public/assets/images/1657150463374.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.9;
+}
+
+.bg-page1-image {
+  background-image: url('../public/assets/images/1644273845427.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.9;
+}
+
+.bg-page2-image {
+  background-image: url('../public/assets/images/673465-2204554309.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.9;
+}
+
+.bg-page3-image {
+  background-image: url('../public/assets/images/1661285400630843.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
