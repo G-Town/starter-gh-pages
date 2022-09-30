@@ -1,6 +1,6 @@
 {
   "name": "starter-gh-pages",
-  "homepage": "https://github.com/G-Town/starter-gh-pages/",
+  "homepage": "https://g-town.github.io/starter-gh-pages/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
