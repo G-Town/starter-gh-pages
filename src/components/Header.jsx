@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { FaHome, FaInfo, FaList } from 'react-icons/fa';
 import {
   Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem,
   Modal, ModalHeader, ModalBody, Button, Form, FormGroup, Input, Label
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { IconContext } from 'react-icons';
 
 class Header extends Component {
 
@@ -25,7 +27,7 @@ class Header extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar dark expand="md" className="bg-dark">
+        <Navbar dark expand="md" className="bg-black">
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
             <NavbarBrand className="mr-auto" href="/">
@@ -33,26 +35,28 @@ class Header extends Component {
             </NavbarBrand>
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav navbar>
-                <NavItem>
-                  <NavLink className="nav-link" to='/home'>
-                    <span className="fa fa-home fa-lg"></span> Home
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to='/aboutus'>
-                    <span className="fa fa-info fa-lg"></span> About
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="nav-link" to='/menu'>
-                    <span className="fa fa-list fa-lg"></span> List
-                  </NavLink>
-                </NavItem>
-                <NavItem>
+                <IconContext.Provider value={{ className: "shared-icon" }}>
+                  <NavItem>
+                    <NavLink className="nav-link text-white" to='/home'>
+                      <FaHome /> Home
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nav-link text-white" to='/about'>
+                      <FaInfo /> About
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nav-link text-white" to='/list'>
+                      <FaList /> List
+                    </NavLink>
+                  </NavItem>
+                  {/* <NavItem>
                   <NavLink className="nav-link" to='/contactus'>
                     <span className="fa fa-address-card fa-lg"></span> Contact
                   </NavLink>
-                </NavItem>
+                </NavItem> */}
+                </IconContext.Provider>
               </Nav>
             </Collapse>
           </div>

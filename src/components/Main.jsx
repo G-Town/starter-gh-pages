@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
-import { Routes, Route, Navigate, withRouter } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Header from './Header'
 import Home from './Home';
+import List from './List';
 import About from './About';
 import Page1 from './Page1';
 import Page2 from './Page2';
 import Page3 from './Page3';
+import Footer from './Footer';
+import Menu from './Menu';
+import DishDetail from './DishDetail';
+import Sidebar from './Sidebar';
 
 const mapStateToProps = state => {
   return {
-    dishes: state.dishes,
+    reditems: state.reditems,
     comments: state.comments,
-    promotions: state.promotions,
-    leaders: state.leaders
+    blueitems: state.blueitems,
+    greenitems: state.greenitems
   }
 }
 
@@ -29,52 +34,72 @@ const mapStateToProps = state => {
 //   postFeedback: (firstname, lastname, telnum, email, contactType, message) => dispatch(postFeedback(firstname, lastname, telnum, email, contactType, message))
 // });
 
-class Main extends Component {
+function Main(props) {
 
   // componentDidMount() {
-  //   this.props.fetchDishes();
-  //   this.props.fetchComments();
-  //   this.props.fetchPromos();
-  //   this.props.fetchLeaders();
+  //   props.fetchDishes();
+  //   props.fetchComments();
+  //   props.fetchPromos();
+  //   props.fetchLeaders();
   // }
 
-  render() {
-    const HomePage = () => {
-      return (
-        <Home
-          dish={this.props.dishes.filter((dish) => dish.featured)[0]}
-          promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
-          leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-        />
-      );
-    }
-
+  const HomePage = () => {
     return (
-      <div>
-        <Header />
-        <Routes>
-          <Route exact path="/home" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/page1" element={<Page1
-          dish={this.props.dishes.filter((dish) => dish.featured)[0]}
-          promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
-          leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-           />} />
-           <Route path="/page2" element={<Page2
-          dish={this.props.dishes.filter((dish) => dish.featured)[0]}
-          promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
-          leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-           />} />
-           <Route path="/page3" element={<Page3
-          dish={this.props.dishes.filter((dish) => dish.featured)[0]}
-          promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
-          leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-           />} />
-          <Route path="/" element={<Navigate replace to="/home" />} />
-        </Routes>
-      </div>
-    )
+      <Home
+        reditem={props.reditems.filter((reditem) => reditem.featured)[0]}
+        // blueitem={props.blueitems.find((blueitem) => blueitem.featured)}
+        blueitem={{
+          name: 'Page 2',
+          image: process.env.PUBLIC_URL + '/assets/images/blue1.jpg',
+          description: 'Menu'
+        }}
+        greenitem={props.greenitems.filter((greenitem) => greenitem.featured)[0]}
+      />
+    );
   }
+
+  const DishWithId = () => {
+    const id = parseInt(useParams().dishId, 10);
+    return (
+      <DishDetail dish={props.blueitems.filter((dish) => dish.id === id)[0]}
+      comments={props.comments.filter((comment) => comment.dishId === id)}
+      />
+    );
+  };
+
+  return (
+    <div>
+      <Header />
+      {/* <Sidebar /> */}
+      <Routes>
+        <Route exact path="/home" element={<HomePage />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/about" element={<About />} />
+
+        <Route path="/page1" element={<Page1
+          blueitem={props.blueitems.filter((blueitem) => blueitem.featured)[0]}
+          greenitem={props.greenitems.filter((greenitem) => greenitem.featured)[0]}
+        />} />
+
+        <Route path="/page2" element={<Page2 dishes={props.blueitems} />}>
+          {/* <Route path=":dishId" element={<DishWithId />} /> */}
+        </Route>
+        <Route path="page2/:dishId" element={<DishWithId />} />
+        <Route path="/page3" element={<Page3
+          reditem={props.reditems.filter((reditem) => reditem.featured)[0]}
+          blueitem={props.blueitems.filter((blueitem) => blueitem.featured)[0]}
+        />} />
+
+        {/* <Route path="/menu" element={<Menu dishes={props.blueitems} />}>
+            <Route path=":dishId" element={<DishWithId />} />
+          </Route> */}
+
+        <Route path="/" element={<Navigate replace to="/home" />} />
+      </Routes>
+      <Footer />
+    </div>
+  )
 }
+
 
 export default connect(mapStateToProps)(Main);
