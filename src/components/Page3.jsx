@@ -88,7 +88,9 @@ function Page3(props) {
           <hr />
         </div>
         <div className="container text-white py-5 box">
-          
+
+          <iframe src={process.env.PUBLIC_URL + "assets/notebooks/assignment1.html"}></iframe>
+
           <div className="row">
             <div className="col-12 col-md m-1 d-flex justify-content-center">
               <RenderCard item={props.reditem} page="/page1" />

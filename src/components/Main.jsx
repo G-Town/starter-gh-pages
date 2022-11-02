@@ -46,16 +46,30 @@ function Main(props) {
   const HomePage = () => {
     return (
       <Home
-        reditem={props.reditems.filter((reditem) => reditem.featured)[0]}
+        // reditem={props.reditems.filter((reditem) => reditem.featured)[0]}
+        reditem={{
+          name: 'Page 1',
+          image: process.env.PUBLIC_URL + '/assets/images/red1.jpg',
+          description: 'Blog'
+        }}
         // blueitem={props.blueitems.find((blueitem) => blueitem.featured)}
         blueitem={{
           name: 'Page 2',
           image: process.env.PUBLIC_URL + '/assets/images/blue1.jpg',
           description: 'Menu'
         }}
-        greenitem={props.greenitems.filter((greenitem) => greenitem.featured)[0]}
+        // greenitem={props.greenitems.filter((greenitem) => greenitem.featured)[0]}
+        greenitem={{
+          name: 'Page 3',
+          image: process.env.PUBLIC_URL + '/assets/images/green2.webp',
+          description: 'Notes'
+        }}
       />
     );
+  }
+
+  const BlogEntry = () => {
+
   }
 
   const DishWithId = () => {
@@ -79,6 +93,7 @@ function Main(props) {
         <Route path="/page1" element={<Page1
           blueitem={props.blueitems.filter((blueitem) => blueitem.featured)[0]}
           greenitem={props.greenitems.filter((greenitem) => greenitem.featured)[0]}
+          blogs={props.reditems}
         />} />
 
         <Route path="/page2" element={<Page2 dishes={props.blueitems} />}>
@@ -86,8 +101,16 @@ function Main(props) {
         </Route>
         <Route path="page2/:dishId" element={<DishWithId />} />
         <Route path="/page3" element={<Page3
-          reditem={props.reditems.filter((reditem) => reditem.featured)[0]}
-          blueitem={props.blueitems.filter((blueitem) => blueitem.featured)[0]}
+          reditem={{
+            name: 'Page 1',
+            image: process.env.PUBLIC_URL + '/assets/images/red1.jpg',
+            description: 'Blog'
+          }}
+          blueitem={{
+            name: 'Page 2',
+            image: process.env.PUBLIC_URL + '/assets/images/blue1.jpg',
+            description: 'Menu'
+          }}
         />} />
 
         {/* <Route path="/menu" element={<Menu dishes={props.blueitems} />}>

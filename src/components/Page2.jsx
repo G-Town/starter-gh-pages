@@ -33,7 +33,7 @@ function Page2(props) {
     borderRadius: 100,
     padding: 60,
     position: "absolute",
-    top: "50%",
+    top: "65%",
     left: "50%",
     transform: "translate(-50%,-150%)",
   };
@@ -78,14 +78,19 @@ function Page2(props) {
             <div className="row">
               <h1>page 2</h1>
             </div>
+            <div className="row mt-5">
+              <p>This page is designed to showcase a menu of items such as food or any merchandise.</p>
+            </div>
           </div>
         </Background>
+
         <div style={{ height: 700 }} className="row align-items-center text-white">
           <div className="col">
 
           </div>
         </div>
       </Parallax>
+
       <div className="bg-page2 pb-5">
         <div className="container text-black pb-4">
           <div className="row">
@@ -94,13 +99,12 @@ function Page2(props) {
               <BreadcrumbItem>Page 2</BreadcrumbItem>
             </Breadcrumb>
           </div>
-
         </div>
 
         <div className="container-fluid text-white p-5 box">
           <h2>Featured Items</h2>
-          <p>This page is designed to showcase a menu of items such as food or any merchandise.
-            Below are selected items to be featured.<br /></p>
+          <p>Below are selected items to be featured.<br />
+          Featured items are selected and displayed in a rotating carousel with image and description.</p>
 
           <div classname="col">
             <FeatureCarousel items={props.dishes.filter((item) => item.featured)} />
@@ -126,8 +130,8 @@ function Page2(props) {
               {mainmenu}
               <hr />
             </div>
-
-
+          </div>
+          <div className="row justify-content-center">
 
             <button className="btn btn-primary mb-3 mx-5 col-2" type="button" data-bs-toggle="collapse"
               data-bs-target="#sidemenu" aria-expanded="false" aria-controls="">Side</button>

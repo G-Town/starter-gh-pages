@@ -1,17 +1,20 @@
 import '../App.css';
 import React, { Component } from 'react';
 import { Parallax, Background } from "react-parallax";
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link, NavLink } from 'react-router-dom';
 
 class About extends Component {
 
   render() {
     const insideStyles = {
-      background: "transparent",
-      padding: 30,
+      background: "rgba(0, 0, 0, 0.65)",
+      borderRadius: 100,
+      padding: 60,
       position: "absolute",
-      top: "50%",
+      top: "65%",
       left: "50%",
-      transform: "translate(-50%,-50%)",
+      transform: "translate(-50%,-150%)",
     };
     return (
       <>
@@ -35,29 +38,92 @@ class About extends Component {
         //   </div>
         // )}
         >
-          <Background className="bg-about-image">
-            <div>
-              <div style={insideStyles}></div>
+          <Background className="bg-about-image text-white">
+          <div className="container" style={insideStyles}>
+            <div className="row">
+              <h1>about</h1>
             </div>
+            <div className="row mt-5">
+              <p>This is a React v6 app built with routed components and reactstrap classes. It is hosted on Git Pages 
+                as a static website which supports a read-only datastore. Thus, server-side data manipulation is not 
+                included. (Details and workaround included here: https://stackoverflow.com/a/48025760/20226933)
+                <br />Instead this React app serves as a testing ground for building components and customizing styles 
+                that can be used in fully deployed apps.</p>
+            </div>
+          </div>
           </Background>
 
           <div style={{ height: 800 }} className="row align-items-center">
-            <div className="col">
+            {/* <div className="col">
               <h2>about</h2>
               <main>
-                <p>This section contains information about...</p>
+                <p>This is a React v6 app built with routed components and reactstrap classes.</p>
               </main>
-            </div>
+            </div> */}
           </div>
 
         </Parallax>
-        <div className="bg-about">
-          <div className="container d-flex align-items-center justify-content-center text-black">
-            <div style={{ height: 800 }}>
-              <h2>about</h2>
-              <main>
-                <p>This section contains information about...</p>
-              </main>
+        <div className="bg-about pb-5">
+          <div className="container text-black pb-4">
+            <div className="row">
+              <Breadcrumb>
+                <BreadcrumbItem><NavLink to="/home" className="App-link">Home</NavLink></BreadcrumbItem>
+                <BreadcrumbItem>Page 2</BreadcrumbItem>
+              </Breadcrumb>
+            </div>
+          </div>
+          <div className="container text-white p-5 box">
+            <h2>To Do Log</h2>
+            <div className="col justify-content-left logList">
+              <ol>
+                <li>
+                  Blog
+                  <ul>
+                    <li>
+                      blog detail component: add view of single blog with comments available in addition to all detials
+                    </li>
+                    <li>
+                      archive list: add functionality including working links to working year, month, and blog detail view
+                    </li>
+                    <li>
+                      add views of blogs displayed according to selected year and/or month from archive list
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Menu
+                  <ul >
+                    <li>
+                      better UI and transition between menu and dish detail components
+                    </li>
+                    <li>
+                      clickable feature carousel that routes to dish detail
+                    </li>
+                    <li>
+                      add form to submit new comments in dish detail component (static)
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Notes
+                  <ul >
+                    <li>
+                      notes
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Other
+                  <ul>
+                    <li>
+                      add List page that will link to all available components
+                    </li>
+                    <li>
+                      
+                    </li>
+                  </ul>
+                </li>
+              </ol>
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ function FeatureCarousel(props) {
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
         key={item.id}
-      ><div className="carouselCont p-3">
+      ><div className="carouselCont py-3">
           <div classname="imgCont">
             <img width="70%" src={item.image} alt={item.name} />
             {/* <CarouselCaption

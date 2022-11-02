@@ -159,22 +159,6 @@ const DishDetail = (props) => {
       <Parallax
         blur={{ min: 0, max: 5 }}
         strength={150}
-      // renderLayer={percentage => (
-      //   <div>
-      //     <div
-      //       style={{
-      //         position: "absolute",
-      //         background: `white`,
-      //         left: "50%",
-      //         top: "50%",
-      //         borderRadius: "50%",
-      //         transform: "translate(-50%,-50%)",
-      //         width: percentage * 500,
-      //         height: percentage * 500,
-      //       }}
-      //     />
-      //   </div>
-      // )}
       >
         <Background className="bg-page2-image">
           <div>
@@ -191,7 +175,7 @@ const DishDetail = (props) => {
       <div className="bg-page2 pb-5">
 
         <div className="container text-white">
-          
+
           <div className="row">
             <Breadcrumb>
               <BreadcrumbItem><Link to="/page2" className="App-link">Page 2</Link></BreadcrumbItem>
@@ -208,7 +192,7 @@ const DishDetail = (props) => {
           </div>
         </div>
 
-          
+
 
       </div>
     </>
