@@ -1,5 +1,4 @@
-export const REDITEMS =
-  [
+export const REDITEMS = [
     {
       id: 1,
       title: "1st blog",

@@ -88,6 +88,16 @@ class About extends Component {
                     <li>
                       add views of blogs displayed according to selected year and/or month from archive list
                     </li>
+                    <li>
+                      login with credentials and auth
+                    </li>
+                    <li>
+                      add button with form/modal to write new blog
+                    </li>
+                    <li>
+                      have blogs render in revers chronological order so most recent and new blogs are at the top 
+                      (still without dynamic backend for saving new blogs)
+                    </li>
                   </ul>
                 </li>
                 <li>
@@ -106,9 +116,12 @@ class About extends Component {
                 </li>
                 <li>
                   Notes
-                  <ul >
+                  <ul>
                     <li>
-                      notes
+                      dynamic resize of iframe to fit each notebook length
+                    </li>
+                    <li>
+                      more styling and edits to be done on seperate portfolio react app
                     </li>
                   </ul>
                 </li>
@@ -116,10 +129,16 @@ class About extends Component {
                   Other
                   <ul>
                     <li>
-                      add List page that will link to all available components
+                      think of something to do with the List page
                     </li>
                     <li>
-                      
+                      improve all styles in APP.css file
+                    </li>
+                    <li>
+                      separate into stylesheets for each page
+                    </li>
+                    <li>
+                      try configuring nested Routes
                     </li>
                   </ul>
                 </li>

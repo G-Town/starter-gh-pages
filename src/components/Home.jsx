@@ -18,8 +18,8 @@ function RenderCard({ item, page }) {
       transformProps={{
         exitTransform: 'scale(0.5) translateY(-50%)'
       }}>
-      <Card style={{ width: '15rem' }} className="bg-black">
-        <CardImg height='190' src={item.image} alt={item.name} />
+      <Card style={{width:'17rem'}} className="bg-black">
+        <CardImg height="220" src={item.image} alt={item.name} />
         <CardBody className="text-light">
           <CardTitle>{item.name}</CardTitle>
           {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null}
@@ -116,8 +116,9 @@ function Home(props) {
                 Click to navigate to corresponding page.</p>
             </div>
           </div>
-          <hr />
-          <div className="row d-flex justify-content-center my-5">
+          
+          
+          <div className="row d-flex justify-content-center">
             <div className="col col-8 col-md-6 col-xxl-3 d-flex justify-content-center my-5">
               <RenderCard item={props.reditem} page="/page1" />
             </div>
@@ -128,6 +129,8 @@ function Home(props) {
               <RenderCard item={props.greenitem} page="/page3" />
             </div>
           </div>
+          <hr />
+
           {/* <div className="row">
             <div className="col-12 col-md m-1 d-flex justify-content-center">
               <RenderCard item={props.blueitem} page="/page2" />
@@ -138,6 +141,7 @@ function Home(props) {
           </div> */}
         </div>
       </div>
+      
       <div></div>
 
     </>

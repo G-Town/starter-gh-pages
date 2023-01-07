@@ -30,6 +30,7 @@ function RenderMenuItem({ dish }) {
 function Page2(props) {
   const insideStyles = {
     background: "rgba(0, 0, 0, 0.45)",
+    fontSize: 18,
     borderRadius: 100,
     padding: 60,
     position: "absolute",
@@ -143,8 +144,6 @@ function Page2(props) {
               {sidemenu}
               <hr />
             </div>
-
-
 
           </div>
 

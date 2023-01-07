@@ -4,33 +4,12 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Breadcrumb,
 import { FadeTransform } from 'react-animation-components';
 import { NavLink } from 'react-router-dom';
 import { Parallax, Background } from "react-parallax";
-// import IFrame from './IFrame';
+import IFrame from './IFrame';
 import { Outlet } from 'react-router-dom/dist';
 
-function RenderCard({ notebook }) {
-  return (
-    <FadeTransform
-      in
-      transformProps={{
-        exitTransform: 'scale(0.5) translateY(-50%)'
-      }}>
-      <Card style={{ width: '15rem' }} className="bg-black">
-        <CardImg height='180' src={notebook.image} alt={notebook.module} />
-        <CardBody className="text-light">
-          <CardTitle>{notebook.module}</CardTitle>
-          <CardSubtitle></CardSubtitle>
-          <CardText></CardText>
-          <NavLink to={`/page3/${notebook.id}`} className="stretched-link"></NavLink>
-        </CardBody>
-      </Card>
-    </FadeTransform>
-  );
-}
-
-function Page3(props) {
+function Notebook(props) {
   const insideStyles = {
     background: "rgba(0, 0, 0, 0.45)",
-    fontSize: 18,
     borderRadius: 100,
     padding: 60,
     position: "absolute",
@@ -61,18 +40,18 @@ function Page3(props) {
       // )}
       >
         <Background className="bg-page3-image text-white">
-          <div className="container" style={insideStyles}>
+        <div className="container" style={insideStyles}>
             <div className="row">
-              <h1>page 3</h1>
+              <h1>Notebook</h1>
             </div>
             <div className="row mt-5">
-              <p>This page is for displaying notes compiled with Jupyter Notebooks.</p>
+              <p></p>
             </div>
           </div>
         </Background>
-        <div style={{ height: 700 }} className="row align-items-center text-white">
+        <div style={{ height: 0 }} className="row align-items-center text-white">
           <div className="col">
-
+            
           </div>
         </div>
 
@@ -81,24 +60,25 @@ function Page3(props) {
         <div className="container text-black pb-4">
           <div className="row">
             <Breadcrumb>
-              <BreadcrumbItem><NavLink to="/home" className="App-link">Home</NavLink></BreadcrumbItem>
-              <BreadcrumbItem>Page 3</BreadcrumbItem>
+              <BreadcrumbItem><NavLink to="/page3" className="App-link">Page3</NavLink></BreadcrumbItem>
+              <BreadcrumbItem>Notebook</BreadcrumbItem>
             </Breadcrumb>
           </div>
-        </div>
-        <div className="container text-white py-5 box">
-          <h2>Jupyter Notebooks</h2>
+          {/* <header>
+            <h2>Header</h2>
+          </header>
           <div className="row">
-            <div className="col-12 col-md mt-1">
-              <p>Below are some examples of small completed notebooks from three different topics. Click on the
-                notebook to render.
-              </p>
+            <div className="col-12 col-md m-1">
+              <p>Text<br></br>
+                Text</p>
             </div>
           </div>
-          <hr />
+          <hr /> */}
+        </div>
+        <div className="container text-white py-5 box">
 
-
-
+          {/* <Outlet /> */}
+          <IFrame url={props.module.url} />
 
           {/* <JupyterNotebookViewer filepath="../notebooks/assignment1.html" notebookInputLanguage="python" /> */}
           {/* <JupyterViewer rawIpynb={assignment1}/> */}
@@ -113,16 +93,23 @@ function Page3(props) {
           </Card>
           <Outlet /> */}
 
-          <div className="row">
+          {/* <div className="row">
             <div className="col-12 col-md m-1 d-flex justify-content-center">
-              <RenderCard notebook={props.notebooks.find(notebook => notebook.id === 0)} />
+              <FadeTransform
+                in
+                transformProps={{
+                  exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
+                <Card style={{ width: '15rem' }} className="bg-black">
+                  <CardImg height='180' src={process.env.PUBLIC_URL + "/assets/images/green1.jpg"} alt="green item" />
+                  <CardBody className="text-light">
+                    <CardTitle>Notebook</CardTitle>
+                    <NavLink to={"/notebook"} className="stretched-link"></NavLink>
+                  </CardBody>
+                </Card>
+              </FadeTransform>
             </div>
-
-            <div className="col-12 col-md m-1 d-flex justify-content-center">
-              <RenderCard notebook={props.notebooks.find(notebook => notebook.id === 1)} />
-            </div>
-          </div>
-          <hr />
+          </div> */}
 
           {/* <div className="row">
             <div className="col-12 col-md m-1 d-flex justify-content-center">
@@ -138,4 +125,4 @@ function Page3(props) {
   );
 }
 
-export default Page3;
+export default Notebook;
